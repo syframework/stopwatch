@@ -48,7 +48,16 @@ class Stopwatch {
 	public function stop($id = 0) {
 		if (!isset($this->startTimes[$id])) return;
 		$end = microtime(true);
-		$this->times[$id] = $end - $this->startTimes[$id];
+		$this->times[$id] = $this->getTime($id) + $end - $this->startTimes[$id];
+	}
+
+	/**
+	 * Reset time record
+	 *
+	 * @param string $id time record identifier
+	 */
+	public function reset($id = 0) {
+		$this->times[$id] = 0;
 	}
 
 }

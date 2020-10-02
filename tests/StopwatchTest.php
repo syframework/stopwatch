@@ -33,4 +33,13 @@ class StopwatchTest extends TestCase {
 		$this->assertEquals(3, (int) $this->stopwatch->getTime('bar'));
 	}
 
+	public function testPause() {
+		for ($i = 0; $i < 100; $i++) {
+			$this->stopwatch->start('a');
+			usleep(10000);
+			$this->stopwatch->stop('a');
+		}
+		$this->assertEquals(1, (int) $this->stopwatch->getTime('a'));
+	}
+
 }
