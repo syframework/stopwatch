@@ -20,7 +20,7 @@ use Sy\Stopwatch;
 $stopwatch = new Stopwatch();
 
 // Start timing
-$this->stopwatch->start();
+$stopwatch->start();
 
 // Process to be timed
 for ($i = 0; $i < 100000; $i++) {
@@ -28,7 +28,7 @@ for ($i = 0; $i < 100000; $i++) {
 }
 
 // Stop timing
-$this->stopwatch->stop();
+$stopwatch->stop();
 
 // Retrieve time in seconds
 $time = $stopwatch->getTime();
@@ -53,7 +53,7 @@ $stopwatch = new Stopwatch();
 for ($i = 0; $i < 10; $i++) {
 	
 	// Start timing process A
-	$this->stopwatch->start('A');
+	$stopwatch->start('A');
 	
 	// Process A
 	for ($a = 0; $a < 1000; $a++) {
@@ -61,17 +61,17 @@ for ($i = 0; $i < 10; $i++) {
 	}
 
 	// Stop timing process A
-	$this->stopwatch->stop('A');
+	$stopwatch->stop('A');
 
 	// Start timing process B
-	$this->stopwatch->start('B');
+	$stopwatch->start('B');
 
 	for ($b = 0; $b < 1000; $b++) {
 		// Do something...
 	}
 
 	// Stop timing process B
-	$this->stopwatch->stop('B');
+	$stopwatch->stop('B');
 }
 
 // Retrieve time
